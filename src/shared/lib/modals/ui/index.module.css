@@ -1,0 +1,35 @@
+.modalWrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    position: relative;
+
+    width: 30rem;
+    padding: 1rem;
+
+    border-radius: 1rem;
+
+    background: white;
+}
+
+.header {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h3 {
+    margin: 0;
+}

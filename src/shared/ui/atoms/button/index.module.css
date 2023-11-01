@@ -1,0 +1,23 @@
+.button {
+    padding: 0.5rem 1rem;
+
+    border-radius: 0.25rem;
+
+    background: black;
+    color: white;
+
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+
+    transition: background 0.4s;
+}
+
+.button:focus {
+    outline: 1px solid darkcyan;        
+}
+
+.button:hover {
+    background: darkcyan;
+}

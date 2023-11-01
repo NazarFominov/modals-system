@@ -1,0 +1,8 @@
+.page {
+    margin: 1rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5rem;
+}
