@@ -1,27 +1,7 @@
-# React + TypeScript + Vite
+В чём заключается суть работы с модальными окнами. Необходимо иметь какое-то хранилище для всех компонентов модалок. А дальше с помощью какого-нибудь стейт менеджера организуете систему, в которой будут по имене модального окна добавлять компонент из хранилища в хранилище "активных" модалок и рендерить последний добавленный. Порядок действий таков
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Создаёте [компоненты](./src/entities) модалок
+2. На верхенем уровне в [app](./src/app/init) собирает их все, прогоняете через функция регистратор, которая соберёт то самое хранилище
+3. В [модели](.\src\shared\lib\modals\model.ts) создаёте хранидище под активные модалки, методы для добавления модалки в хранилище, для удаления оттуда, для удаления всех модалок и, может, что-то ещё, что понадобится в проекте
+4. Создайте [компонент](.\src\shared\lib\modals\ui\modals.tsx) для рендера активной модалки
+5. Добавляйте свои окна во время [работы сайта](.\src\pages\home\index.tsx)
